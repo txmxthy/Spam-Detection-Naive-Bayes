@@ -1,4 +1,4 @@
-<h1 align="center">Naive Bayes Spam Detection From Scratch <h1>
+<h1 align="center">Naive Bayes Spam Detection from Scratch <h1>
 <p align="center">
  <a href="#license">
 	<img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License"></a>
@@ -20,12 +20,19 @@
 
 
 ## About
-This project is home to a naive bayesian classifier implemented from scratch in go. 
+This project is home to a naive bayesian classifier implemented from scratch in go. The dataset this program was designed for is comprised of 12 binary features followed by binary class label, and each feature corresponds to indicators/attributes collected from spam and legitimate emails.
+### Bayes Theorem
+[Baye's Theorem](https://plato.stanford.edu/entries/bayes-theorem/) states that the probability of a hypothesis H conditional on a given body of data E is the ratio of the unconditional probability of the conjunction of the hypothesis with the data to the unconditional probability of the data alone. 
+	
+Baye's theorem is defined as the probability of H conditional on E is defined as PE(H) = P(H & E)/P(E), provided that both terms of this ratio exist and P(E) > 0.
   
-  This uses [Baye's Theorm](https://plato.stanford.edu/entries/bayes-theorem/) to calculate the probability that a piece of data belongs to a specific class based on prior knowledge. 
-  In this case, the program takes two command-line arguments to a labelled and unlabelled dataset and applies the knowledge gained from the labelled dataset to label the other set, and display its findings.
+
   
-  The dataset is comprised of 12 binary features and a binary class label. Feature selection is not part of this project.
+### Application
+Baye's theorem is used to calculate the conditional probability of an input belonging to a specific class based on prior knowledge. 
+In this case, the program takes two command-line arguments to a labelled and unlabelled dataset. First, it applies the knowledge gained by the model's during the training phase from the labelled dataset to determine the conditional probability of a given feature belonging to the spam or non-spam classes. It then uses this probability to label the unlabelled set, before displaying its findings.
+  
+
   
   This project was mainly completed as a way to learn and practice go, it was not intended for practical or varied use; some functions are designed around the specific datasets. 
   
